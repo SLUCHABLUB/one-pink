@@ -1,6 +1,6 @@
 import numpy
 
-from main import RÅSA_HEX, RÅSA_OKLAB, Oklab_to_hex_sRGB
+from råsa import RÅSA_HEX, RÅSA_OKLAB, Oklab_to_hex_sRGB
 
 
 def round_significant_digits(value, digits):

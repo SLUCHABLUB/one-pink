@@ -1,7 +1,4 @@
-import numpy
 from colour import models, notation
-
-from significant_digits import find_minimum_significant_digits
 
 
 def hex_sRGB_to_Oklab(hex):
@@ -14,11 +11,3 @@ def Oklab_to_hex_sRGB(colour):
 
 RÅSA_HEX = "#f280a1"
 RÅSA_OKLAB = hex_sRGB_to_Oklab(RÅSA_HEX)
-
-
-def main():
-    find_minimum_significant_digits()
-
-
-if __name__ == "__main__":
-    main()
