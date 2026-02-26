@@ -1,13 +1,23 @@
-import colour
+import numpy
+from colour import models, notation
 
-RÅSA_HEX = "F280A1"
-RÅSA_SRGB = colour.notation.HEX_to_RGB(RÅSA_HEX)
-RÅSA_XYZ = colour.models.sRGB_to_XYZ(RÅSA_SRGB)
-RÅSA_OKLAB = colour.models.XYZ_to_Oklab(RÅSA_XYZ)
+from significant_digits import find_minimum_significant_digits
+
+
+def hex_sRGB_to_Oklab(hex):
+    return models.XYZ_to_Oklab(models.sRGB_to_XYZ(notation.HEX_to_RGB(hex)))
+
+
+def Oklab_to_hex_sRGB(colour):
+    return notation.RGB_to_HEX(models.XYZ_to_sRGB(models.Oklab_to_XYZ(colour)))
+
+
+RÅSA_HEX = "#f280a1"
+RÅSA_OKLAB = hex_sRGB_to_Oklab(RÅSA_HEX)
 
 
 def main():
-    print(RÅSA_OKLAB)
+    find_minimum_significant_digits()
 
 
 if __name__ == "__main__":
