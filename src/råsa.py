@@ -10,4 +10,6 @@ def Oklab_to_hex_sRGB(colour):
 
 
 RÅSA_HEX = "#f280a1"
-RÅSA_OKLAB = hex_sRGB_to_Oklab(RÅSA_HEX)
+RÅSA_sRGB = notation.HEX_to_RGB(RÅSA_HEX)
+RÅSA_XYZ = models.sRGB_to_XYZ(RÅSA_sRGB)
+RÅSA_OKLAB = models.XYZ_to_Oklab(RÅSA_XYZ)
